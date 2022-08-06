@@ -1,0 +1,17 @@
+.menuBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+    width: 80px;
+
+    background-color: #fff;
+    transition: all 0.25s ease-in-out;
+}
+
+.menuBody:hover {
+    width: 200px;
+    box-shadow: 0 0 25px 0 #4fb68f54;
+    transition: all 0.25s ease-in-out;
+}

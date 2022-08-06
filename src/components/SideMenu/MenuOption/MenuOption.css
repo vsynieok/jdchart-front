@@ -1,0 +1,54 @@
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+
+    height: 60px;
+    width: calc(100% - 20px);
+
+    margin: 10px;
+    margin-bottom: 0;
+    
+    background-color: #cbfae8;
+}
+
+.button:hover {
+    background-color: blueviolet;
+    transition: background-color 0.1s ease-in;
+}
+
+.button:hover .icon {
+    fill: white;
+}
+
+.button:hover .text {
+    color: white;
+}
+
+.menuBody:hover .text {
+    transition: all 0.1s ease-in-out;
+    transition-delay: 0.25s;
+    
+    transition: opacity 0.25s ease-in;
+    transition-delay: 0.5s;
+
+    font-size: initial;
+    opacity: 100;
+    padding-left: 10px;
+}
+
+.icon {
+    min-width: 60px;
+    min-height: 60px;
+    fill: #4fb68f;
+}
+
+.text {
+    width: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0;
+    opacity: 0;
+}
