@@ -15,3 +15,11 @@
     box-shadow: 0 0 25px 0 #4fb68f54;
     transition: all 0.25s ease-in-out;
 }
+
+@media (max-width: 500px) {
+    .menuBody:hover {
+        width: 80px;
+        box-shadow: none;
+        transition: none;
+    }
+}
