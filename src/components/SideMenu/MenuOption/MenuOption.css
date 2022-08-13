@@ -1,29 +1,61 @@
-.button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 5px;
+.optionContainer {
+    border-radius: 7px;
 
     height: 60px;
     width: calc(100% - 20px);
 
     margin: 10px;
     margin-bottom: 0;
-    
-    background-color: #cbfae8;
+    overflow: hidden;
+    background-color: #d6f7ea;
 }
 
-.button:hover {
-    background-color: blueviolet;
-    transition: background-color 0.1s ease-in;
+.button {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    z-index: 2;
 }
 
-.button:hover .icon {
+.selectedButton .icon {
     fill: white;
 }
 
-.button:hover .text {
+.selectedButton .text {
     color: white;
+}
+
+.buttonBg {
+    position: relative;
+    top: -150%;
+    left: -80%;
+    width: 300%;
+    height: 300%;
+    transition: all 0.25s ease-in;
+    z-index: 1;
+
+    background-repeat: repeat;
+    background-position: 100% 0;
+    background-size: 200% auto;
+    transform: rotate(45deg);
+
+    animation: liquid-gradient 4s linear infinite;
+}
+
+@keyframes liquid-gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+.button:hover {
+    transition: box-shadow 0.1s ease-in;
+    box-shadow: 0 0 0 2px #4fb68f;
 }
 
 .menuBody:hover .text {
@@ -39,7 +71,9 @@
 
 .icon {
     min-width: 60px;
+    width: 60px;
     min-height: 60px;
+    height: 60px;
     fill: #4fb68f;
 }
 

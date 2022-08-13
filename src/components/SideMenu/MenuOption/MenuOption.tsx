@@ -1,29 +1,45 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./MenuOption.css";
-import {ReactComponent as Home} from "../../../assets/icons/Home.svg"
+import MenuOptionProperties from "./Properties";
 
-const MenuOption: React.FunctionComponent = () => {
+const MenuOption = (properties: MenuOptionProperties) => {
     const buttonElement = useRef<HTMLDivElement>(null);
-    const [isExpanded, setExpanded] = useState<boolean>(true);
+    const [isSelected, setSelected] = useState<boolean>(false);
 
     useEffect(() => {
-        console.dir(buttonElement.current);
-        console.log(buttonElement.current?.offsetWidth)
-        if (buttonElement.current?.clientWidth as number >= 180) {
-            setExpanded(true);
-            console.log("yass expanded");
-        }
-        else {
-            setExpanded(true);
-        }
-    }, [])
+        setSelected(properties.id === properties.selected);
+    }, [properties.selected]);
 
     return (
-        <div className="button" ref={buttonElement}>
-            <div className="text">
-                Home
-            </div>
-            <Home className="icon"/>
+        <div
+            className="optionContainer"
+            onClick={(evt) => {
+                if (properties.onClick !== undefined) properties.onClick(properties.id);
+            }}>
+                <div
+                    className={`button${isSelected ? " selectedButton" : ""}`}
+                    ref={buttonElement}
+                >
+                    <div className="text">
+                        {properties.text}
+                    </div>
+                    <properties.icon className="icon"/>
+                </div>
+                <div
+                    style={ isSelected
+                        ? {
+                            backgroundImage: `repeating-linear-gradient(90deg,
+                                ${properties.gradientColors[1]},
+                                ${properties.gradientColors[0]},
+                                ${properties.gradientColors[1]})`,
+                            opacity: 100
+                        }
+                        : {
+                            opacity: 0,
+                        }
+                    }
+                    className="buttonBg">
+                </div>
         </div>
     )
 }
