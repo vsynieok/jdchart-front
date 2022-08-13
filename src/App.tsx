@@ -1,10 +1,24 @@
-import './App.css';
-import SideMenu from './components/SideMenu/SideMenu';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import ContentSpace from "./components/ContentSpace/ContentSpace";
+import About from "./components/Pages/About/About";
+import AllCharts from "./components/Pages/AllCharts/AllCharts";
+import Home from "./components/Pages/Home/Home";
+import SideMenu from "./components/SideMenu/SideMenu";
 
 function App() {
   return (
     <div className="App">
-      <SideMenu></SideMenu>
+      <BrowserRouter>
+        <SideMenu />
+        <Routes>
+          <Route path="/" element={<ContentSpace />}>
+            <Route index element={<Home />} />
+            <Route path="charts" element={<AllCharts />} />
+            <Route path="about" element={<About />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

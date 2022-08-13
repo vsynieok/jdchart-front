@@ -1,5 +1,5 @@
 interface IconProperties {
-    className: string;
+  className?: string;
 }
 
 export default IconProperties;

@@ -1,90 +1,93 @@
 .optionContainer {
-    border-radius: 7px;
+  border-radius: 7px;
 
-    height: 60px;
-    width: calc(100% - 20px);
+  height: 60px;
+  width: calc(100% - 20px);
 
-    margin: 10px;
-    margin-bottom: 0;
-    overflow: hidden;
-    background-color: #d6f7ea;
+  margin: 10px;
+  margin-bottom: 0;
+  overflow: hidden;
+  background-color: #d6f7ea;
 }
 
 .button {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: none;
-    z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  z-index: 2;
+
+  transition: background-color 0.1s ease-in;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .selectedButton .icon {
-    fill: white;
+  fill: white;
 }
 
 .selectedButton .text {
-    color: white;
+  color: white;
 }
 
 .buttonBg {
-    position: relative;
-    top: -150%;
-    left: -80%;
-    width: 300%;
-    height: 300%;
-    transition: all 0.25s ease-in;
-    z-index: 1;
+  position: relative;
+  top: -150%;
+  left: -80%;
+  width: 300%;
+  height: 300%;
+  transition: all 0.25s ease-in;
+  z-index: 1;
 
-    background-repeat: repeat;
-    background-position: 100% 0;
-    background-size: 200% auto;
-    transform: rotate(45deg);
+  background-repeat: repeat;
+  background-position: 100% 0;
+  background-size: 200% auto;
+  transform: rotate(45deg);
 
-    animation: liquid-gradient 4s linear infinite;
+  animation: liquid-gradient 4s linear infinite;
 }
 
 @keyframes liquid-gradient {
-    0% {
-        background-position: 0%;
-    }
-    100% {
-        background-position: 200%;
-    }
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
 }
 
 .button:hover {
-    transition: box-shadow 0.1s ease-in;
-    box-shadow: 0 0 0 2px #4fb68f;
+  transition: background-color 0.1s ease-in;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .menuBody:hover .text {
-    transition: all 0.1s ease-in-out;
-    transition-delay: 0.25s;
-    
-    transition: opacity 0.25s ease-in;
-    transition-delay: 0.1s;
+  transition: all 0.1s ease-in-out;
+  transition-delay: 0.25s;
 
-    opacity: 100;
-    width: 100%;
+  transition: opacity 0.25s ease-in;
+  transition-delay: 0.1s;
+
+  opacity: 100;
+  width: 100%;
 }
 
 .icon {
-    min-width: 60px;
-    width: 60px;
-    min-height: 60px;
-    height: 60px;
-    fill: #4fb68f;
+  min-width: 60px;
+  width: 60px;
+  min-height: 60px;
+  height: 60px;
+  fill: var(--ui-colors-shadow);
 }
 
 .text {
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bolder;
-    color: #4fb68f;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  color: var(--ui-colors-shadow);
 
-    transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 
-    width: 0;
-    opacity: 0;
+  width: 0;
+  opacity: 0;
 }

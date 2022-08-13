@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap");
+
+#root {
+  --ui-colors-shadow: #4fb68f;
+}
 
 .App {
   text-align: center;

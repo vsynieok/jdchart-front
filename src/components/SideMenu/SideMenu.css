@@ -1,26 +1,56 @@
 .menuBody {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    height: 100vh;
-    width: 80px;
+  height: 100vh;
+  width: 80px;
 
-    background-color: #fff;
-    transition: all 0.25s ease-in-out;
-    z-index: -1;
+  background-color: #fff;
+
+  transition: width 0.25s ease-in-out;
+  z-index: 1;
 }
 
 .menuBody:hover {
-    width: 200px;
-    box-shadow: 0 0 25px 0 #4fb68f54;
-    transition: all 0.25s ease-in-out;
+  width: 200px;
+  box-shadow: 0 0 25px 0 #4fb68f54;
+  transition: all 0.25s ease-in-out;
+  backdrop-filter: blur(2px);
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.backdropBlur-enter {
+  opacity: 0;
+}
+
+.backdropBlur-enter-active {
+  opacity: 100;
+  transition: opacity 250ms ease-in;
+}
+
+.backdropBlur-exit-active {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
 }
 
 @media (max-width: 500px) {
-    .menuBody:hover {
-        width: 80px;
-        box-shadow: none;
-        transition: none;
-    }
+  .menuBody:hover {
+    width: 80px;
+    box-shadow: none;
+    transition: none;
+  }
+
+  .backdrop {
+    opacity: 0;
+    size: 0 0;
+  }
 }
