@@ -1,26 +1,31 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createHook } from "react-sweet-state";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Icons from "../../assets/icons/Icons";
 import MenuOption from "./MenuOption/MenuOption";
 import "./SideMenu.css";
+import { SideMenuOption } from "./SideMenuOptions";
+import SideMenuStore from "./SideMenuStore";
+
+const useSideMenu = createHook(SideMenuStore);
 
 const SideMenu: React.FunctionComponent = () => {
-  const [selectedOption, setSelectedOption] = useState<number>(1);
+  const [state, actions] = useSideMenu();
   const [isOnTop, setOnTop] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const switchPages = (key: number) => {
-    setSelectedOption(key);
+    actions.setCurrentOption(key);
 
     switch (key) {
-      case 1:
+      case SideMenuOption.Home:
         navigate("/");
         break;
-      case 2:
+      case SideMenuOption.Charts:
         navigate("charts");
         break;
-      case 3:
+      case SideMenuOption.About:
         navigate("about");
         break;
       default:
@@ -37,24 +42,24 @@ const SideMenu: React.FunctionComponent = () => {
         onMouseLeave={() => setOnTop(false)}
       >
         <MenuOption
-          id={1}
-          selected={selectedOption}
+          id={SideMenuOption.Home}
+          selected={state.currentOption}
           text="Home"
           icon={Icons.Home}
           gradientColors={["#7700ff", "#ff00ac"]}
           onClick={(key) => switchPages(key)}
         />
         <MenuOption
-          id={2}
-          selected={selectedOption}
+          id={SideMenuOption.Charts}
+          selected={state.currentOption}
           text="All charts"
           icon={Icons.Charts}
           gradientColors={["#000eff", "#00ecff"]}
           onClick={(key) => switchPages(key)}
         />
         <MenuOption
-          id={3}
-          selected={selectedOption}
+          id={SideMenuOption.About}
+          selected={state.currentOption}
           text="About"
           icon={Icons.About}
           gradientColors={["#ff8400", "#ff0000"]}

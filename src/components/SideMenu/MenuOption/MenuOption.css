@@ -7,7 +7,7 @@
   margin: 10px;
   margin-bottom: 0;
   overflow: hidden;
-  background-color: #d6f7ea;
+  background-color: var(--ui-colors-highlight);
 }
 
 .button {

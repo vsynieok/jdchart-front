@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Action, createHook, createStore } from "react-sweet-state";
+import { Action, createStore } from "react-sweet-state";
 
 interface ContentSpaceState {
   currentPage: ReactNode;
@@ -22,5 +22,4 @@ const actions = {
 };
 
 let store = createStore({ initialState, actions });
-let hook = createHook(store);
-export default hook;
+export default store;

@@ -4,6 +4,7 @@ import ContentSpace from "./components/ContentSpace/ContentSpace";
 import About from "./components/Pages/About/About";
 import AllCharts from "./components/Pages/AllCharts/AllCharts";
 import Home from "./components/Pages/Home/Home";
+import NotFound from "./components/Pages/NotFound/NotFound";
 import SideMenu from "./components/SideMenu/SideMenu";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="charts" element={<AllCharts />} />
             <Route path="about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
