@@ -1,0 +1,69 @@
+.optionBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  width: 300px;
+  height: 150px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    45deg,
+    var(--chart-option-gr-a) 0%,
+    var(--chart-option-gr-b) 100%
+  );
+  border-radius: 15px;
+
+  margin-right: 10px;
+  padding: 15px;
+
+  text-align: right;
+
+  transition: all 0.5s ease;
+}
+
+.optionBody:before {
+  content: "";
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+
+  background: white;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.optionTitle {
+  color: white;
+  margin: 0;
+  font-weight: bold;
+
+  transition: all 0.5s ease;
+}
+
+.optionSubtitle {
+  color: white;
+  opacity: 0.5;
+  margin: 0;
+  font-weight: lighter;
+
+  transition: all 0.5s ease;
+}
+
+.optionBody:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px var(--chart-option-shadow);
+  transition: all 0.5s ease;
+}
+
+.optionBody:hover .optionTitle,
+.optionBody:hover .optionSubtitle {
+  transition: color 0.5s ease;
+}
+
+.optionBgOverlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
