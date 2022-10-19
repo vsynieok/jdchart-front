@@ -12,10 +12,7 @@ const NotFound: React.FC = () => {
   return (
     <div className={styles.notFound}>
       <div className={styles.textContainer}>
-        <p className={styles.title}>Oops!...404</p>
-        <p className={styles.description}>
-          You've found something you weren't supposed to find.
-        </p>
+        <p className={styles.title}>Page Not Found</p>
       </div>
       <div className={styles.imgContainer}>
         <img
@@ -23,6 +20,15 @@ const NotFound: React.FC = () => {
           className={styles.coaches}
           src="/404/coaches.png"
         />
+        <div id={styles.q1} className={styles.q}>
+          ?
+        </div>
+        <div id={styles.q2} className={styles.q}>
+          ?
+        </div>
+        <div id={styles.q3} className={styles.q}>
+          ?
+        </div>
       </div>
     </div>
   );

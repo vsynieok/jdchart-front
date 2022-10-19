@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
-import { createHook } from "react-sweet-state";
 import { SideMenuOption } from "../../SideMenu/SideMenuOptions";
-import SideMenuStore from "../../SideMenu/SideMenuStore";
+import useSideMenu from "../../SideMenu/SideMenuStore";
 import "./Home.css";
-
-const useSideMenu = createHook(SideMenuStore);
 
 const Home: React.FC = () => {
   const [sideMenuStore, sideMenuActions] = useSideMenu();

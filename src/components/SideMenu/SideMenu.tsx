@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createHook } from "react-sweet-state";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Icons from "../../assets/icons/Icons";
 import MenuOption from "./MenuOption/MenuOption";
 import "./SideMenu.css";
 import { SideMenuOption } from "./SideMenuOptions";
-import SideMenuStore from "./SideMenuStore";
-
-const useSideMenu = createHook(SideMenuStore);
+import useSideMenu from "./SideMenuStore";
 
 const SideMenu: React.FunctionComponent = () => {
   const [state, actions] = useSideMenu();

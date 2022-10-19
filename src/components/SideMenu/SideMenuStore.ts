@@ -1,4 +1,4 @@
-import { Action, createStore } from "react-sweet-state";
+import { Action, createHook, createStore } from "react-sweet-state";
 
 interface SideMenuState {
   currentOption: number;
@@ -19,4 +19,5 @@ const actions = {
 };
 
 let store = createStore({ initialState, actions });
-export default store;
+let useSideMenu = createHook(store);
+export default useSideMenu;
