@@ -14,9 +14,13 @@ const ChartOption: React.FC<ChartOptionProps> = (props) => {
   } as React.CSSProperties;
 
   return (
-    <div style={gradientVars} className="optionBody">
-      <h2 className="optionSubtitle">{props.subtitle}</h2>
-      <h1 className="optionTitle">{props.title}</h1>
+    <div style={gradientVars} className="cOptionContainer">
+      <div className="optionBody">
+        <h2 className="optionSubtitle">{props.subtitle}</h2>
+        <h1 className="optionTitle">{props.title}</h1>
+      </div>
+      <div className="cOptionBgA"></div>
+      <div className="cOptionBgB"></div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ContentSpace from "./components/ContentSpace/ContentSpace";
+import "./components/CSS/Scrollbar.css";
 import About from "./components/Pages/About/About";
 import AllCharts from "./components/Pages/AllCharts/AllCharts";
 import Home from "./components/Pages/Home/Home";
