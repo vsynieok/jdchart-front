@@ -1,0 +1,128 @@
+.chartTable {
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.chartTable .spacer {
+  height: 15px;
+}
+
+.chartTable td {
+  background-color: var(--ui-colors-highlight);
+  padding: 30px;
+  transition: all 0.2s ease;
+
+  color: var(--ui-colors-shadow);
+}
+
+.chartTable td img {
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+.chartTable td .chartEntryDesc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: default;
+}
+
+.chartEntryDesc .chartEntryDesc__songInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  color: var(--ui-colors-shadow-darker);
+}
+
+.chartEntryDesc .chartEntryDesc__songInfo h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.chartEntryDesc .chartEntryDesc__songInfo h2 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.chartTable td .chartEntryPosition {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+
+  background-color: var(--ui-colors-shadow);
+  border-radius: 5px;
+
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.chartTable td:first-child {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  padding-right: 15px;
+}
+
+.chartTable td:nth-child(2),
+.chartTable td:nth-child(3) {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.chartTable td:nth-child(4) {
+  padding-left: 15px;
+}
+
+.chartTable td:last-child {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.chartTable tr:hover td {
+  background-color: var(--ui-colors-shadow-lighter);
+  transition: all 0.2s ease;
+}
+
+.chartTable tr th .chartHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: calc(100% - 60px);
+  height: 30px;
+  left: 30px;
+
+  background-color: var(--ui-colors-shadow);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  text-align: center;
+  color: white;
+}
+
+.chartTable tr th .chartHeader__pos {
+  width: 60px;
+}
+
+.chartTable tr th .chartHeader__peak {
+  width: 60px;
+  left: calc(calc(100% - 60px) / 2 - 7px);
+}
+
+.chartTable tr th .chartHeader__plays {
+  width: 60px;
+  left: calc(calc(100% - 60px) / 2);
+}
+
+.chart-entry__peak {
+  width: 60px;
+}

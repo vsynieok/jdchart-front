@@ -11,7 +11,7 @@ const ChartOption: React.FC<ChartOptionProps> = (props) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/chart/id");
+    navigate("/charts/1");
   };
 
   const gradientVars = {
