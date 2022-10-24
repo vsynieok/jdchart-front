@@ -87,6 +87,7 @@
 .cOptionContainer:hover {
   transform: scale(1.02);
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .cOptionContainer:hover .optionBody {
@@ -111,5 +112,17 @@
   }
   .optionSubtitle {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .cOptionContainer {
+    --chart-option-width: 150px;
+  }
+  .optionTitle {
+    font-size: 20px;
+  }
+  .optionSubtitle {
+    font-size: 15px;
   }
 }

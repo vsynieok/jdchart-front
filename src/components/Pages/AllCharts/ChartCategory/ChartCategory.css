@@ -10,6 +10,8 @@
 
   margin: 0;
   margin-left: 15px;
+
+  color: var(--ui-colors-title);
 }
 
 .itemsContainerWrapper {
@@ -34,7 +36,7 @@
   position: absolute;
   width: 20%;
   height: calc(var(--chart-option-height) + 30px);
-  transform: translate(0, calc(0px - var(--chart-option-height) - 30px));
+  transform: translate(0, calc(0px - var(--chart-option-height) - 40px));
 
   right: 0;
 
@@ -61,5 +63,22 @@
   }
   .categoryTitle {
     font-size: 40px;
+  }
+}
+
+@media (max-width: 280px) {
+  .categoryTitle {
+    font-size: 30px;
+  }
+  .itemsContainerWrapper {
+    margin-left: -10px;
+  }
+  .itemsContainerFade {
+    width: 30%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 1) 70%
+    );
   }
 }

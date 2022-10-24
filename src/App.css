@@ -3,6 +3,7 @@
 #root {
   --ui-colors-shadow: #4fb68f;
   --ui-colors-highlight: #d6f7ea;
+  --ui-colors-title: #3a3a3a;
 }
 
 .App {
